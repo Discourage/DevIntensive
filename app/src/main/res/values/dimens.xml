@@ -2,4 +2,63 @@
     <!-- Default screen margins, per the Android Design guidelines. -->
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
+
+    <!-- Sizes -->
+    <dimen name="size_small_24">24dp</dimen>
+    <dimen name="size_medium_56">56dp</dimen>
+    <dimen name="size_large_72">72dp</dimen>
+
+    <!-- Spaces -->
+    <dimen name="spacing_small_8">8dp</dimen>
+    <dimen name="spacing_normal_16">16dp</dimen>
+    <dimen name="spacing_medial_24">24dp</dimen>
+    <dimen name="spacing_medium_32">32dp</dimen>
+    <dimen name="spacing_large_56">56dp</dimen>
+    <dimen name="spacing_larger_72">72dp</dimen>
+
+    <!-- Vertical spaces -->
+    <dimen name="spacing_status_bar">24dp</dimen>
+    <dimen name="spacing_tool_bar">56dp</dimen>
+    <dimen name="spacing_title">72dp</dimen>
+    <dimen name="spacing_subtitle">48dp</dimen>
+    <dimen name="spacing_list_items">72dp</dimen>
+    <dimen name="spacing_content_areas">8dp</dimen>
+
+    <!-- Typography -->
+    <dimen name="typography_regular_12">12sp</dimen>
+    <dimen name="typography_medium_14">14sp</dimen>
+    <dimen name="typography_regular_16">16sp</dimen>
+    <dimen name="typography_medium_20">20sp</dimen>
+    <dimen name="typography_regular_24">24sp</dimen>
+    <dimen name="typography_regular_34">34sp</dimen>
+    <dimen name="typography_regular_45">45sp</dimen>
+    <dimen name="typography_regular_56">56sp</dimen>
+    <dimen name="typography_light_112">112sp</dimen>
+
+
+    <!-- List -->
+    <dimen name="list_screen_edge_left_and_right_margins_16dp">16dp</dimen>
+    <dimen name="list_content_left_margin_72dp">72dp</dimen>
+    <dimen name="list_status_bar_24dp">24dp</dimen>
+    <dimen name="list_toolbar_56dp">56dp</dimen>
+    <dimen name="list_subtitle_48dp">48dp</dimen>
+    <dimen name="list_item_72dp">72dp</dimen>
+    <dimen name="list_space_between_content_areas_8dp">8dp</dimen>
+
+    <!-- Detail view -->
+    <dimen name="detail_view_screen_edge_left_and_right_margins_16dp">16dp</dimen>
+    <dimen name="detail_view_content_left_margin_from_screen_edge_72dp">72dp</dimen>
+    <dimen name="detail_view_right_side_icons_from_the_right_edge_32dp">32dp</dimen>
+    <dimen name="detail_view_status_bar_24dp">24dp</dimen>
+    <dimen name="detail_view_toolbar_56dp">56dp</dimen>
+    <dimen name="detail_view_space_between_areas_8dp">8dp</dimen>
+    <dimen name="detail_view_list_item_72dp">72dp</dimen>
+
+    <!--Navigation drawer-->
+    <dimen name="navigation_drawer_screen_edge_left_and_right_margins_16dp">16dp</dimen>
+    <dimen name="navigation_drawer_content_associated_with_an_icon_left_margins_72dp">72dp</dimen>
+    <dimen name="navigation_drawer_account_menu_and_list_items_48dp">48dp</dimen>
+    <dimen name="navigation_drawer_space_between_content_areas_8dp">8dp</dimen>
+    <dimen name="navigation_drawer_navigation_right_margin_56dp">56dp</dimen>
+
 </resources>
