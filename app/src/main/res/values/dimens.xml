@@ -10,7 +10,6 @@
     <dimen name="size_larger_144">144dp</dimen>
     <dimen name="size_huge_220">220dp</dimen>
 
-
     <!-- Spaces -->
     <dimen name="spacing_small_8">8dp</dimen>
     <dimen name="spacing_normal_16">16dp</dimen>

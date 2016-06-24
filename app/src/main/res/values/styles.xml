@@ -54,7 +54,6 @@
         <item name="android:textSize">@dimen/typography_regular_24</item>
     </style>
 
-
     <!--Layout styles-->
 
     <style name="layout_vertical">
