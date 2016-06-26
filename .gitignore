@@ -30,7 +30,6 @@
 *.iml
 
 # OS-specific files
-.DS_Store
 .DS_Store?
 ._*
 .Spotlight-V100
@@ -44,11 +43,7 @@ local.properties
 # Android Studio Navigation editor temp files
 .navigation*.iml
 .idea/
-app/libs/
-app/src/main/java/com/softdesign/devintensive/data/
-app/src/main/java/com/softdesign/devintensive/ui/fragments/
-app/src/main/java/com/softdesign/devintensive/utils/
-app/src/main/res/drawable/
+
 gitignore.txt
 gradle.properties
 gradle/
