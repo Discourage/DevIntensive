@@ -7,6 +7,8 @@
     <dimen name="size_small_24">24dp</dimen>
     <dimen name="size_medium_56">56dp</dimen>
     <dimen name="size_large_72">72dp</dimen>
+    <dimen name="size_larger_144">144dp</dimen>
+    <dimen name="size_huge_220">220dp</dimen>
 
     <!-- Spaces -->
     <dimen name="spacing_small_8">8dp</dimen>
@@ -60,5 +62,9 @@
     <dimen name="navigation_drawer_account_menu_and_list_items_48dp">48dp</dimen>
     <dimen name="navigation_drawer_space_between_content_areas_8dp">8dp</dimen>
     <dimen name="navigation_drawer_navigation_right_margin_56dp">56dp</dimen>
+    <dimen name="line_size">1dp</dimen>
+    <dimen name="margin_stat_28">28dp</dimen>
+    <dimen name="big_size_112">112dp</dimen>
+    <dimen name="medium_margin_28">28dp</dimen>
 
 </resources>

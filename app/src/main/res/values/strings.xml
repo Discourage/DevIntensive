@@ -1,3 +1,20 @@
 <resources>
-    <string name="app_name">DevIntensive</string>
+
+    <string name="app_name">Денис Ефремов</string>
+
+    <!--Profile hints-->
+
+    <string name="mobile_phone">Мобильный телефон</string>
+    <string name="email">E-mail</string>
+    <string name="vk_link">Профиль в vk</string>
+    <string name="repo_link">Репозиторий</string>
+    <string name="about_user">О себе</string>
+
+    <!--Statistic-->
+
+    <string name="rate_statistic">Рейтинг</string>
+    <string name="string_statistic">Написано строк кода</string>
+    <string name="project_statistic">Проектов</string>
+    <string name="about_me">В канун Рождества Нью-Йоркский офицер полиции Джон МакКлейн (Брюс Уиллис) прибывает в Лос-Анджелес, чтобы помириться со своей женой Холли (Бонни Беделиа), которая живёт отдельно, чтобы делать карьеру юриста-международника в крупной корпорации «Накатоми». Водитель лимузина Аргайл привозит его в небоскрёб Накатоми Плаза, где проходит рождественская вечеринка, совмещенная с празднованием выгодного для компании контракта, заключенного не без Холли Дженеро</string>
+
 </resources>
