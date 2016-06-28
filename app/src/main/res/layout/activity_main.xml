@@ -3,29 +3,25 @@
                                         xmlns:app="http://schemas.android.com/apk/res-auto"
                                         xmlns:tools="http://schemas.android.com/tools"
                                         android:id="@+id/navigation_drawer"
-                                        android:layout_width="match_parent"
-                                        android:layout_height="match_parent"
+                                        style="@style/standard_size_mm"
                                         tools:context=".ui.activities.MainActivity">
 
     <android.support.design.widget.CoordinatorLayout
         android:id="@+id/main_coordinator_container"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:fitsSystemWindows="true"        >
+        style="@style/standard_size_mm"
+        android:fitsSystemWindows="true">
 
         <android.support.design.widget.AppBarLayout
             android:id="@+id/appbar_layout"
-            android:fitsSystemWindows="true"
             style="@style/AppTheme.AppBarOverlay"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/color_primary"
-            android:titleTextColor="@color/white">
+            android:fitsSystemWindows="true">
 
             <android.support.design.widget.CollapsingToolbarLayout
                 android:id="@+id/collapsing_toolbar"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                style="@style/standard_size_mw"
                 app:contentScrim="@color/color_primary"
                 app:layout_scrollFlags="scroll|exitUntilCollapsed">
 
@@ -42,27 +38,25 @@
                     style="@style/AppTheme.PopupOverlay"
                     android:layout_width="match_parent"
                     android:layout_height="?attr/actionBarSize"
-                    app:layout_collapseMode="pin"
-                    android:theme="@style/GalaxyZooThemeToolbarDarkOverflow"/>
+                    android:theme="@style/GalaxyZooThemeToolbarDarkOverflow"
+                    android:titleTextColor="@color/white"
+                    app:layout_collapseMode="pin"/>
 
             </android.support.design.widget.CollapsingToolbarLayout>
 
         </android.support.design.widget.AppBarLayout>
 
         <android.support.v4.widget.NestedScrollView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            style="@style/standard_size_mm"
             app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
             <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                style="@style/standard_size_mm"
                 android:orientation="vertical"
                 >
 
                 <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    style="@style/standard_size_mw"
                     android:background="@color/grey"
                     android:orientation="horizontal">
 
@@ -111,12 +105,10 @@
                             android:text="@string/project_statistic"/>
 
                     </LinearLayout>
-
                 </LinearLayout>
 
                 <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    style="@style/standard_size_mw"
                     android:orientation="horizontal">
 
                     <ImageView
@@ -148,8 +140,7 @@
                     style="@style/view.settings"/>
 
                 <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    style="@style/standard_size_mw"
                     android:orientation="horizontal">
 
                     <ImageView
@@ -180,8 +171,7 @@
                     style="@style/view.settings"/>
 
                 <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    style="@style/standard_size_mw"
                     android:orientation="horizontal">
 
                     <ImageView
@@ -212,8 +202,7 @@
                     style="@style/view.settings"/>
 
                 <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    style="@style/standard_size_mw"
                     android:orientation="horizontal">
 
                     <ImageView
@@ -244,8 +233,7 @@
                     style="@style/view.settings"/>
 
                 <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    style="@style/standard_size_mw"
                     android:orientation="horizontal">
 
                     <ImageView
@@ -283,8 +271,7 @@
 
     <android.support.design.widget.NavigationView
         android:id="@+id/navigation_view"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        style="@style/standard_size_mm"
         android:layout_gravity="start"
         app:headerLayout="@layout/drawer_header"
         app:menu="@menu/drawer_menu"/>
