@@ -66,5 +66,8 @@
     <dimen name="margin_stat_28">28dp</dimen>
     <dimen name="big_size_112">112dp</dimen>
     <dimen name="medium_margin_28">28dp</dimen>
+    <dimen name="profile_image_size">256dp</dimen>
+
+    <dimen name="fab_right_space">8dp</dimen>
 
 </resources>
