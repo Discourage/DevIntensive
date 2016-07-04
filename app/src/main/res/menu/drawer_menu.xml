@@ -12,7 +12,5 @@
             android:checkable="true"
             android:icon="@drawable/ic_people_black_24dp"
             android:title="@string/team"/>
-
     </group>
-
 </menu>

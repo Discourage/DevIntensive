@@ -2,7 +2,7 @@
 
     <string name="app_name">Денис Ефремов</string>
 
-    <!--Profile hints-->
+    <!-- Profile hints -->
 
     <string name="mobile_phone">Мобильный телефон</string>
     <string name="email">E-mail</string>
@@ -10,13 +10,43 @@
     <string name="repo_link">Репозиторий</string>
     <string name="about_user">О себе</string>
 
-    <!--Statistic-->
+    <!-- Statistic -->
 
+    <string name="rate_value">0</string>
     <string name="rate_statistic">Рейтинг</string>
+
+    <string name="string_value">1000</string>
     <string name="string_statistic">Написано строк кода</string>
+
+    <string name="project_value">0</string>
     <string name="project_statistic">Проектов</string>
-    <string name="about_me">В канун Рождества Нью-Йоркский офицер полиции Джон МакКлейн (Брюс Уиллис) прибывает в Лос-Анджелес, чтобы помириться со своей женой Холли (Бонни Беделиа), которая живёт отдельно, чтобы делать карьеру юриста-международника в крупной корпорации «Накатоми». Водитель лимузина Аргайл привозит его в небоскрёб Накатоми Плаза, где проходит рождественская вечеринка, совмещенная с празднованием выгодного для компании контракта, заключенного не без Холли Дженеро</string>
+
+    <!-- Navigation drawer menu -->
+
     <string name="my_profile">Мой профиль</string>
     <string name="team">Команда</string>
+
+    <!--User progile photo-->
+    <string name="allow_message">Разрешить</string>
+    <string name="user_profile.photo.gallery">Загрузить из галереи</string>
+    <string name="user_profile.photo.camera">Сделать снимок</string>
+    <string name="user_profile.photo.cancel">Отмена</string>
+    <string name="user_profile.photo.title">Изменить фотографию профиля</string>
+    <string name="user_profile.choose_message">Выберите фото</string>
+    <string name="load_foto_not_cancel_message">Для корректной работы приложения необходимо дать требуемые разрешения</string>
+
+    <!-- Defailt user profile data -->
+    <string name="profile_phone">88000000000</string>
+    <string name="profile_mail">user@mail.ru</string>
+    <string name="profile_vk">vk.com/</string>
+    <string name="profile_git">github.com/</string>
+    <string name="profile_about">О себе</string>
+
+    <!-- Strings related to login -->
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Пароль</string>
+    <string name="action_sign_in">ВОЙТИ</string>
+    <string name="forget_password">Забыли пароль?</string>
+    <string name="title_activity_login">Вход</string>
 
 </resources>
