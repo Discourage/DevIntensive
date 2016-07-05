@@ -136,6 +136,10 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         setupDrawer();
         loadUserInfoValue();
         makeRoundAvatar();
+
+        mToolbar.setTitleTextColor(getResources().getColor(R.color.white));
+        mCollapsingToolbar.setExpandedTitleColor(getResources().getColor(R.color.white));
+        mCollapsingToolbar.setCollapsedTitleTextColor(getResources().getColor(R.color.white));
         Picasso.with(this)
                 .load(mDataManager.getPreferenceManager().loadUserPhoto())
                 .placeholder(R.mipmap.user_bg)
@@ -342,7 +346,8 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
 
                 mUserPhone.requestFocus();
                 lockToolbar();
-                mCollapsingToolbar.setCollapsedTitleTextColor(Color.TRANSPARENT);
+                mCollapsingToolbar.setExpandedTitleColor(Color.TRANSPARENT);
+
             }
         } else {
             mFab.setImageResource(R.drawable.ic_create_black_24dp);
@@ -360,8 +365,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
                 hideProfilePlaceholder();
                 unlockToolbar();
 
-                mCollapsingToolbar.setCollapsedTitleTextColor(getResources().getColor(R.color.white));
-
+                mCollapsingToolbar.setExpandedTitleColor(getResources().getColor(R.color.white));
             }
 
         }

@@ -18,7 +18,7 @@ public class EditTextMail {
                 Pattern p = Pattern.compile("^([a-zA-z\\d\\u002E\\u005F-]{3,})+@+([a-zA-Z\\d\\u002E\\u005F-]{2,})+(\\u002E+[a-z]{2,})$");
                 Matcher m = p.matcher(editText.getText().toString());
                 if (!m.find()) {
-                    editText.setError("Некорректный e-mail");
+                    editText.setError("Некорректный email(Необходим email вида xxx@xx.xx)");
                 }
             }
 

@@ -34,6 +34,7 @@
         </LinearLayout>
 
         <android.support.design.widget.TextInputLayout
+            android:layout_marginTop="@dimen/activity_vertical_margin"
             style="@style/standard_size_mw"
             android:layout_marginLeft="@dimen/spacing_medium_28"
             android:layout_marginRight="@dimen/spacing_medium_28">
@@ -43,15 +44,15 @@
                 android:id="@+id/email"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
-                android:layout_marginTop="@dimen/activity_vertical_margin"
                 android:hint="@string/prompt_email"
                 android:inputType="textEmailAddress"
                 android:textColorHint="@color/grey_login"
-                android:textSize="@dimen/typography_regular_12"/>
+                />
         </android.support.design.widget.TextInputLayout>
 
         <android.support.design.widget.TextInputLayout
             style="@style/standard_size_mw"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
             android:layout_marginLeft="@dimen/spacing_medium_28"
             android:layout_marginRight="@dimen/spacing_medium_28">
 
@@ -59,13 +60,12 @@
                 android:id="@+id/password"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
-                android:layout_marginTop="@dimen/activity_vertical_margin"
                 android:hint="@string/prompt_password"
                 android:imeActionId="@+id/login"
                 android:inputType="textPassword"
                 android:maxLines="1"
                 android:singleLine="true"
-                android:textSize="@dimen/typography_regular_12"/>
+                />
 
         </android.support.design.widget.TextInputLayout>
 
