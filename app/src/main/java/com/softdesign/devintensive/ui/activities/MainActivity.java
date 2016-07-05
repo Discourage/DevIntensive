@@ -38,7 +38,9 @@ import android.widget.RelativeLayout;
 import com.softdesign.devintensive.R;
 import com.softdesign.devintensive.data.managers.DataManager;
 import com.softdesign.devintensive.utils.ConstantManager;
-import com.softdesign.devintensive.utils.EditTextTelefonMask;
+import com.softdesign.devintensive.utils.ValidationText.EditTextMail;
+import com.softdesign.devintensive.utils.ValidationText.EditTextTelefonMask;
+import com.softdesign.devintensive.utils.ValidationText.EditTextUri;
 import com.softdesign.devintensive.utils.RoundedAvatarDrawable;
 import com.squareup.picasso.Picasso;
 
@@ -59,7 +61,6 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
     public static final String TAG = ConstantManager.TAG_PREFIX + "Main Activity";
 
     private DataManager mDataManager;
-
     private ImageView mProfileAvatar;
     private List<EditText> mUserInfoViews;
 
@@ -97,7 +98,6 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
     Toolbar mToolbar;
     @BindView(R.id.appbar_layout)
     AppBarLayout mAppBarLayout;
-    private String str;
 
     private AppBarLayout.LayoutParams mAppBarParams = null;
     private File mPhotoFile = null;
@@ -122,13 +122,16 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
 
         mFab.setOnClickListener(this);
         mProfilePlaceholder.setOnClickListener(this);
+
         mCallPhone.setOnClickListener(this);
         mSendMail.setOnClickListener(this);
         mOpenVk.setOnClickListener(this);
         mOpenGit.setOnClickListener(this);
 
-//        mUserPhone.addTextChangedListener(EditTextTelefonMask.insert(mUserPhone));
-
+        mUserPhone.addTextChangedListener(EditTextTelefonMask.insert(mUserPhone));
+        mUserMail.addTextChangedListener(EditTextMail.insert(mUserMail));
+        mUserVk.addTextChangedListener(EditTextUri.insert(mUserVk));
+        mUserGit.addTextChangedListener(EditTextUri.insert(mUserGit));
         setupToolbar();
         setupDrawer();
         loadUserInfoValue();
@@ -137,7 +140,6 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
                 .load(mDataManager.getPreferenceManager().loadUserPhoto())
                 .placeholder(R.mipmap.user_bg)
                 .into(mProfileImage);
-
 
         if (savedInstanceState == null) {
 //            активити запускается впервые
@@ -164,6 +166,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
     @Override
     protected void onResume() {
         Log.d(TAG, "onResume");
+
         super.onResume();
     }
 
@@ -332,10 +335,14 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
                 userValue.setFocusableInTouchMode(true);
                 showProfilePlaceholder();
 
+                mCallPhone.setEnabled(false);
+                mSendMail.setEnabled(false);
+                mOpenVk.setEnabled(false);
+                mOpenGit.setEnabled(false);
+
                 mUserPhone.requestFocus();
                 lockToolbar();
                 mCollapsingToolbar.setCollapsedTitleTextColor(Color.TRANSPARENT);
-
             }
         } else {
             mFab.setImageResource(R.drawable.ic_create_black_24dp);
@@ -343,9 +350,16 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
                 userValue.setEnabled(false);
                 userValue.setFocusable(false);
                 userValue.setFocusableInTouchMode(false);
+
+                mCallPhone.setEnabled(true);
+                mSendMail.setEnabled(true);
+                mOpenVk.setEnabled(true);
+                mOpenGit.setEnabled(true);
+
                 saveUserInfoValue();
                 hideProfilePlaceholder();
                 unlockToolbar();
+
                 mCollapsingToolbar.setCollapsedTitleTextColor(getResources().getColor(R.color.white));
 
             }

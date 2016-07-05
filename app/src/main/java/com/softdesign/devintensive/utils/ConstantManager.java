@@ -1,11 +1,9 @@
 package com.softdesign.devintensive.utils;
 
-import android.content.IntentSender;
-
 public interface ConstantManager {
     /*TAG FOR LOG*/
 
-    String TAG_PREFIX = "DEV";
+    String TAG_PREFIX = "DEV ";
     String EDIT_MODE_KEY = "EDIT_MODE_KEY";
 
     String USER_PHONE_KEY = "USER_PHONE_KEY";
