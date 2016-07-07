@@ -2,6 +2,10 @@
 
     <string name="app_name">Денис Ефремов</string>
 
+    <!--ID приложения в VK-->
+
+    <integer name="com_vk_sdk_AppId">5537171</integer>
+
     <!-- Profile hints -->
 
     <string name="mobile_phone">Мобильный телефон</string>
@@ -25,6 +29,8 @@
 
     <string name="my_profile">Мой профиль</string>
     <string name="team">Команда</string>
+    <string name="logout">Выйти из профиля</string>
+
 
     <!--User progile photo-->
     <string name="allow_message">Разрешить</string>

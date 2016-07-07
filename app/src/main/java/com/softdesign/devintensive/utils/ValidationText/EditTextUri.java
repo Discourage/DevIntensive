@@ -3,13 +3,14 @@ package com.softdesign.devintensive.utils.ValidationText;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.widget.EditText;
+import android.widget.ImageView;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public abstract class EditTextUri {
 
-    public static TextWatcher insert(final EditText editText) {
+    public static TextWatcher insert(final EditText editText, final ImageView imageView) {
         return new TextWatcher() {
 
             public void onTextChanged(CharSequence s, int start, int before, int count) {

@@ -128,10 +128,11 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         mOpenVk.setOnClickListener(this);
         mOpenGit.setOnClickListener(this);
 
-        mUserPhone.addTextChangedListener(EditTextTelefonMask.insert(mUserPhone));
-        mUserMail.addTextChangedListener(EditTextMail.insert(mUserMail));
-        mUserVk.addTextChangedListener(EditTextUri.insert(mUserVk));
-        mUserGit.addTextChangedListener(EditTextUri.insert(mUserGit));
+        mUserPhone.addTextChangedListener(EditTextTelefonMask.insert(mUserPhone,mCallPhone));
+        mUserMail.addTextChangedListener(EditTextMail.insert(mUserMail,mSendMail));
+        mUserVk.addTextChangedListener(EditTextUri.insert(mUserVk,mOpenVk));
+        mUserGit.addTextChangedListener(EditTextUri.insert(mUserGit,mOpenGit));
+
         setupToolbar();
         setupDrawer();
         loadUserInfoValue();
@@ -291,6 +292,11 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(MenuItem item) {
+                switch (item.getItemId()){
+                    case R.id.user_logout:
+                        Intent logoutIntent=new Intent(getApplicationContext(),LoginActivity.class);
+                        startActivity(logoutIntent);
+                }
                 showSnackBar(item.getTitle().toString());
                 item.setChecked(true);
                 mNavigationDrawer.closeDrawer(GravityCompat.START);

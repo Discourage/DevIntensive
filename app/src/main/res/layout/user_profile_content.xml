@@ -78,7 +78,8 @@
                         android:id="@+id/mobile_et"
                         style="@style/app_text.user"
                         android:hint="@string/mobile_phone"
-                        android:inputType="phone"/>
+                        android:inputType="phone"
+                        android:maxLength="20"/>
                 </android.support.design.widget.TextInputLayout>
             </LinearLayout>
 

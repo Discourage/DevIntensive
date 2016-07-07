@@ -68,6 +68,7 @@
     <!-- Views -->
     <dimen name="line_size_1dp">1dp</dimen>
     <dimen name="line_size_3dp">3dp</dimen>
+    <dimen name="line_size_4dp">4dp</dimen>
 
     <!-- Images -->
     <dimen name="avatar_image_size">60dp</dimen>

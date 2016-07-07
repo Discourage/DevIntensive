@@ -9,6 +9,7 @@ import android.view.View;
 
 import com.softdesign.devintensive.R;
 import com.softdesign.devintensive.utils.ConstantManager;
+import com.vk.sdk.util.VKUtil;
 
 public class LoginActivity extends AppCompatActivity {
     public static final String TAG = ConstantManager.TAG_PREFIX + "Login Activity";
@@ -17,6 +18,11 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
+
+//Получение fingerprints для VK
+//        String[] fingerprints = VKUtil.getCertificateFingerprint(this, this.getPackageName());
+//        Log.d("Fingerprint", fingerprints[0]);
         Log.d(TAG, "onCreate");
     }
 

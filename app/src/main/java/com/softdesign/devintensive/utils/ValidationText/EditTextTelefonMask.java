@@ -3,22 +3,28 @@ package com.softdesign.devintensive.utils.ValidationText;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.widget.EditText;
+import android.widget.ImageView;
 
 public abstract class EditTextTelefonMask {
     private static final String mask11 = "# (###) ### ## ##";
     private static final String mask12 = "## (###) ### ## ##";
-    private static final String mask20 = "# ## ### ### ## ## ## #####";
 
     public static String unmask(String s) {
-        return s.replaceAll("[^0-9]*", "");
+        return s.replaceAll("[^+0-9]*", "");
     }
 
-    public static TextWatcher insert(final EditText editText) {
+    public static TextWatcher insert(final EditText editText, final ImageView imageView) {
         return new TextWatcher() {
             boolean isUpdating;
             String old = "";
 
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
+            public void onTextChanged(CharSequence s, int start, int before, int count) {}
+
+
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+            }
+
+            public void afterTextChanged(Editable s) {
                 String userPhoneString = EditTextTelefonMask.unmask(s.toString());
                 String mask;
                 String defaultMask = getDefaultMask(userPhoneString);
@@ -27,9 +33,6 @@ public abstract class EditTextTelefonMask {
                 switch (userPhoneString.length()) {
                     case 12:
                         mask = mask12;
-                        break;
-                    case 20:
-                        mask = mask20;
                         break;
                     default:
                         mask = defaultMask;
@@ -65,18 +68,13 @@ public abstract class EditTextTelefonMask {
                 editText.setSelection(mascara.length());
             }
 
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-            }
-
-            public void afterTextChanged(Editable s) {
-            }
         };
     }
 
     private static String getDefaultMask(String str) {
         String defaultMask = mask11;
         if (str.length() > 11) {
-            defaultMask = mask20;
+            defaultMask = mask12;
         }
         return defaultMask;
     }
