@@ -12,7 +12,15 @@
             android:checkable="true"
             android:icon="@drawable/ic_people_black_24dp"
             android:title="@string/team"/>
+    </group>
 
+    <group android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/user_logout"
+            android:checkable="true"
+            android:icon="@drawable/logout"
+            android:title="@string/logout"/>
     </group>
 
 </menu>

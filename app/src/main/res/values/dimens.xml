@@ -7,6 +7,7 @@
     <dimen name="size_small_24">24dp</dimen>
     <dimen name="size_medium_56">56dp</dimen>
     <dimen name="size_large_72">72dp</dimen>
+    <dimen name="size_big_112">112dp</dimen>
     <dimen name="size_larger_144">144dp</dimen>
     <dimen name="size_huge_220">220dp</dimen>
 
@@ -14,6 +15,7 @@
     <dimen name="spacing_small_8">8dp</dimen>
     <dimen name="spacing_normal_16">16dp</dimen>
     <dimen name="spacing_medial_24">24dp</dimen>
+    <dimen name="spacing_medium_28">28dp</dimen>
     <dimen name="spacing_medium_32">32dp</dimen>
     <dimen name="spacing_large_56">56dp</dimen>
     <dimen name="spacing_larger_72">72dp</dimen>
@@ -37,7 +39,6 @@
     <dimen name="typography_regular_56">56sp</dimen>
     <dimen name="typography_light_112">112sp</dimen>
 
-
     <!-- List -->
     <dimen name="list_screen_edge_left_and_right_margins_16dp">16dp</dimen>
     <dimen name="list_content_left_margin_72dp">72dp</dimen>
@@ -56,18 +57,28 @@
     <dimen name="detail_view_space_between_areas_8dp">8dp</dimen>
     <dimen name="detail_view_list_item_72dp">72dp</dimen>
 
-    <!--Navigation drawer-->
+    <!-- Navigation drawer -->
     <dimen name="navigation_drawer_screen_edge_left_and_right_margins_16dp">16dp</dimen>
     <dimen name="navigation_drawer_content_associated_with_an_icon_left_margins_72dp">72dp</dimen>
     <dimen name="navigation_drawer_account_menu_and_list_items_48dp">48dp</dimen>
     <dimen name="navigation_drawer_space_between_content_areas_8dp">8dp</dimen>
     <dimen name="navigation_drawer_navigation_right_margin_56dp">56dp</dimen>
-    <dimen name="line_size">1dp</dimen>
-    <dimen name="margin_stat_28">28dp</dimen>
-    <dimen name="big_size_112">112dp</dimen>
-    <dimen name="medium_margin_28">28dp</dimen>
+    <dimen name="fab_right_space">8dp</dimen>
+
+    <!-- Views -->
+    <dimen name="line_size_1dp">1dp</dimen>
+    <dimen name="line_size_3dp">3dp</dimen>
+    <dimen name="line_size_4dp">4dp</dimen>
+
+    <!-- Images -->
+    <dimen name="avatar_image_size">60dp</dimen>
+    <dimen name="placeholder_photo_size_90">90dp</dimen>
     <dimen name="profile_image_size">256dp</dimen>
 
-    <dimen name="fab_right_space">8dp</dimen>
+
+    <!-- Buttons -->
+    <dimen name="button_login_width_125">125dp</dimen>
+    <dimen name="button_login_height_36">36dp</dimen>
+
 
 </resources>

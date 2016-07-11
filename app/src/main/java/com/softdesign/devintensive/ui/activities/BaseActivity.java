@@ -31,25 +31,18 @@ public class BaseActivity extends AppCompatActivity {
 
     public void hideProgress() {
         if (mProgressDialog != null) {
-            if(mProgressDialog.isShowing()){
+            if (mProgressDialog.isShowing()) {
                 mProgressDialog.hide();
             }
         }
-
-
     }
 
     public void showError(String message, Exception error) {
         showToast(message);
         Log.e(TAG, String.valueOf(error));
-
-
     }
 
     public void showToast(String message) {
         Toast.makeText(this, message, Toast.LENGTH_LONG);
-
     }
-
-
 }
