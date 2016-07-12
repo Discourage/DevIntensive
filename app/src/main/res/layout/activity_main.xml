@@ -1,29 +1,27 @@
-<?xml version="1.0" encoding="utf-8"?>
 <android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
                                         xmlns:app="http://schemas.android.com/apk/res-auto"
                                         xmlns:tools="http://schemas.android.com/tools"
                                         android:id="@+id/navigation_drawer"
                                         style="@style/standard_size_mm"
+                                        android:fitsSystemWindows="true"
                                         tools:context=".ui.activities.MainActivity">
 
     <android.support.design.widget.CoordinatorLayout
         android:id="@+id/main_coordinator_container"
-        style="@style/standard_size_mm"
-        android:fitsSystemWindows="true">
+        style="@style/standard_size_mm">
 
         <android.support.design.widget.AppBarLayout
             android:id="@+id/appbar_layout"
             style="@style/AppTheme.AppBarOverlay"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/color_primary"
-            android:fitsSystemWindows="true">
+            android:background="@color/color_primary">
 
             <android.support.design.widget.CollapsingToolbarLayout
                 android:id="@+id/collapsing_toolbar"
-                style="@style/standard_size_mm"
+                style="@style/standard_size_mw"
                 app:contentScrim="@color/color_primary"
-                app:layout_scrollFlags="scroll|exitUntilCollapsed">
+                app:layout_scrollFlags="scroll|exitUntilCollapsed|snap">
 
                 <FrameLayout
                     android:layout_width="match_parent"
@@ -45,22 +43,22 @@
 
                         <TextView
                             style="@style/standard_size_ww"
+                            android:layout_above="@+id/photo_placeholder"
                             android:layout_centerHorizontal="true"
+                            android:layout_marginBottom="@dimen/spacing_small_8"
                             android:fontFamily="sans-serif-medium"
                             android:text="@string/user_profile.photo.title"
-                            android:textColor="@color/white"
-                            android:layout_above="@+id/photo_placeholder"
-                            android:layout_marginBottom="@dimen/spacing_small_8"/>
+                            android:textColor="@color/white"/>
 
                         <ImageView
                             android:id="@+id/photo_placeholder"
                             android:layout_width="@dimen/placeholder_photo_size_90"
                             android:layout_height="@dimen/placeholder_photo_size_90"
-                            android:layout_centerHorizontal="true"
                             android:layout_alignParentBottom="true"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginBottom="@dimen/spacing_large_56"
                             android:scaleType="centerCrop"
-                            android:src="@drawable/ic_add_a_photo_black_48dp"
-                            android:layout_marginBottom="@dimen/spacing_large_56"/>
+                            android:src="@drawable/ic_add_a_photo_black_48dp"/>
                     </RelativeLayout>
                 </FrameLayout>
 
@@ -77,16 +75,76 @@
             </android.support.design.widget.CollapsingToolbarLayout>
         </android.support.design.widget.AppBarLayout>
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="112dp"
+            android:background="@color/grey"
+            android:gravity="center"
+            android:orientation="horizontal"
+            app:behavior_min_height="@dimen/size_medium_56"
+            app:layout_behavior=".ui.behaviors.UserInfoBehavior">
+
+            <LinearLayout
+                style="@style/stats_layout"
+                android:layout_weight="1">
+
+                <TextView
+                    android:id="@+id/user_info_rate_txt"
+                    style="@style/stats_text.rate"
+                    android:text="@string/rate_value"/>
+
+                <TextView
+                    style="@style/stats_text"
+                    android:text="@string/rate_statistic"/>
+
+            </LinearLayout>
+
+            <View style="@style/view.vertical"/>
+
+            <LinearLayout
+                style="@style/stats_layout"
+                android:layout_weight="2">
+
+                <TextView
+                    android:id="@+id/user_info_codelines_txt"
+                    style="@style/stats_text.rate"
+                    android:text="@string/string_value"/>
+
+                <TextView
+                    style="@style/stats_text"
+                    android:text="@string/string_statistic"/>
+
+            </LinearLayout>
+
+            <View style="@style/view.vertical"/>
+
+            <LinearLayout
+                style="@style/stats_layout"
+                android:layout_weight="1">
+
+                <TextView
+                    android:id="@+id/user_info_project_txt"
+                    style="@style/stats_text.rate"
+                    android:text="@string/project_value"/>
+
+                <TextView
+                    style="@style/stats_text"
+                    android:text="@string/project_statistic"/>
+
+            </LinearLayout>
+        </LinearLayout>
+
+
         <include layout="@layout/user_profile_content"/>
 
         <android.support.design.widget.FloatingActionButton
             android:id="@+id/fab"
             style="@style/standard_size_ww"
             android:layout_marginEnd="@dimen/fab_right_space"
+            android:layout_marginRight="@dimen/fab_right_space"
             android:src="@drawable/ic_create_black_24dp"
             app:layout_anchor="@id/appbar_layout"
-            app:layout_anchorGravity="bottom|right"
-            android:layout_marginRight="@dimen/fab_right_space"/>
+            app:layout_anchorGravity="bottom|right"/>
 
     </android.support.design.widget.CoordinatorLayout>
 
