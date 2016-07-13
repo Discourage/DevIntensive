@@ -6,8 +6,6 @@ import android.content.ContentValues;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.net.Uri;
 import android.os.Environment;
@@ -66,8 +64,6 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
 
     private List<EditText> mUserInfoViews;
     private List<TextView> mUserValueViews;
-    private List<TextView> mUserNameViews;
-
 
     private TextView mUserName;
     private TextView mUserNameEmail;
@@ -140,11 +136,6 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         mUserValueViews.add(mUserValueCodelines);
         mUserValueViews.add(mUserValueProject);
 
-//        mUserNameViews = new ArrayList<>();
-//        mUserNameViews.add(mUserName);
-//        mUserNameViews.add(mUserNameEmail);
-
-
         mFab.setOnClickListener(this);
         mProfilePlaceholder.setOnClickListener(this);
 
@@ -163,7 +154,6 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         initUserFields();
         initUserInfoValue();
         makeRoundAvatar();
-
 
         mToolbar.setTitleTextColor(getResources().getColor(R.color.white));
         mCollapsingToolbar.setExpandedTitleColor(getResources().getColor(R.color.white));
@@ -364,10 +354,6 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
                 .placeholder(R.drawable.user_avatar)
                 .transform(new RoundedAvatarDrawable())
                 .into(mProfileAvatar);
-//        NavigationView navigationView = (NavigationView) findViewById(R.id.navigation_view);
-//        mProfileAvatar = (ImageView) navigationView.getHeaderView(0).findViewById(R.id.user_avatar);
-//        Bitmap btMap = BitmapFactory.decodeResource(getResources(), R.drawable.user_avatar);
-//        mProfileAvatar.setImageBitmap(RoundedAvatarDrawable.getRoundedCornerBitmap(btMap));
     }
 
     /*перключает режим редактирования
@@ -433,6 +419,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         mDataManager.getPreferenceManager().saveUserProfileData(userData);
     }
 
+    // Загружаем статистику пользователя из PreferenceManager
     private void initUserInfoValue() {
         List<String> userData = mDataManager.getPreferenceManager().loadUserProfileValues();
         for (int i = 0; i < userData.size(); i++) {
@@ -587,6 +574,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         startActivityForResult(appSettingIntent, ConstantManager.PERMISSION_REQUEST_SETTINGS_CODE);
     }
 
+    // Загружаем имя,фамилию и почту из PreferenceManager
     private void initUserName() {
         List<String> userNameValues = mDataManager.getPreferenceManager().loadUserName();
         mUserName.setText(userNameValues.get(0).toString() + " " + userNameValues.get(1).toString());

@@ -1,7 +1,5 @@
 package com.softdesign.devintensive.data.managers;
 
-import android.content.Context;
-
 import com.softdesign.devintensive.data.network.RestService;
 import com.softdesign.devintensive.data.network.ServiceGenerator;
 import com.softdesign.devintensive.data.network.req.UserLoginReq;

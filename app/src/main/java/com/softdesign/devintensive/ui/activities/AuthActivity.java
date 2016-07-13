@@ -14,7 +14,6 @@ import android.widget.TextView;
 
 import com.softdesign.devintensive.R;
 import com.softdesign.devintensive.data.managers.DataManager;
-import com.softdesign.devintensive.data.network.RestService;
 import com.softdesign.devintensive.data.network.req.UserLoginReq;
 import com.softdesign.devintensive.data.network.res.UserModelRes;
 import com.softdesign.devintensive.utils.ConstantManager;
@@ -50,7 +49,6 @@ public class AuthActivity extends BaseActivity implements View.OnClickListener {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_auth);
         ButterKnife.bind(this);
-
 
 //Получение fingerprints для VK
 //        String[] fingerprints = VKUtil.getCertificateFingerprint(this, this.getPackageName());
@@ -108,18 +106,17 @@ public class AuthActivity extends BaseActivity implements View.OnClickListener {
                 rememberPassword();
                 break;
         }
-
     }
-
+    // Метод показа Snackbar
     private void showSnackBar(String message) {
         Snackbar.make(mCoordinatorLayout, message, Snackbar.LENGTH_LONG).show();
     }
-
+    // Востановление пароля
     private void rememberPassword() {
         Intent rememberIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://devintensive.softdesign-apps.ru/forgotpass"));
         startActivity(rememberIntent);
     }
-
+    // Метод при успешном вводе пароля
     private void loginSuccess(UserModelRes userModel) {
         showSnackBar(userModel.getData().getToken());
         mDatamanager.getPreferenceManager().saveAuthToken(userModel.getData().getToken());
@@ -133,7 +130,7 @@ public class AuthActivity extends BaseActivity implements View.OnClickListener {
         Intent loginIntent = new Intent(this, MainActivity.class);
         startActivity(loginIntent);
     }
-
+    // Обработка нажатий на кнопку
     private void signIn() {
         if (NetworkStatusChecker.isNetworkAvailable(this)) {
 
@@ -149,7 +146,6 @@ public class AuthActivity extends BaseActivity implements View.OnClickListener {
                         showSnackBar("Все пропало Шеф!!!");
                     }
                 }
-
                 @Override
                 public void onFailure(Call<UserModelRes> call, Throwable t) {
 //Обработать ошибки
@@ -160,7 +156,7 @@ public class AuthActivity extends BaseActivity implements View.OnClickListener {
             showSnackBar("Сеть не доступна,попробуйте позже");
         }
     }
-
+    // Сохранение данных(Рейтинг,Количество строк,Проектов) с сервера
     private void saveUserInfoValues(UserModelRes userModel) {
         int[] userValues = {
                 userModel.getData().getUser().getProfileValues().getRating(),
@@ -169,7 +165,7 @@ public class AuthActivity extends BaseActivity implements View.OnClickListener {
         };
         mDatamanager.getPreferenceManager().saveUserProfileValues(userValues);
     }
-
+    // Сохранение данных(Телефон,email,VK, GitHub,О себе) с сервера
     private void saveUserProfileData(UserModelRes userModel) {
         List<String> userFields = new ArrayList<>();
 
@@ -181,14 +177,14 @@ public class AuthActivity extends BaseActivity implements View.OnClickListener {
 
         mDatamanager.getPreferenceManager().saveUserProfileData(userFields);
     }
-
+    // Сохранение данных(Фото ,Аватар) с сервера
     private void saveUserPhotoAndAvatar(UserModelRes userModel) {
         Uri photo = Uri.parse(userModel.getData().getUser().getPublicInfo().getPhoto());
         Uri avatar = Uri.parse(userModel.getData().getUser().getPublicInfo().getAvatar());
         mDatamanager.getPreferenceManager().saveUserPhoto(photo);
         mDatamanager.getPreferenceManager().saveAvatarImage(avatar);
     }
-
+    // Сохранение данных(Имя, Фамилия, Почта) с сервера
     private void saveUserName(UserModelRes userModel) {
         String[] userName = {
                 userModel.getData().getUser().getFirstName(),
@@ -196,7 +192,6 @@ public class AuthActivity extends BaseActivity implements View.OnClickListener {
                 userModel.getData().getUser().getContacts().getEmail()
         };
         mDatamanager.getPreferenceManager().saveUserName(userName);
-
     }
 }
 
