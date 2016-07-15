@@ -12,7 +12,7 @@ import okhttp3.Response;
 public class HeaderInterceptor implements Interceptor {
     @Override
     public Response intercept(Chain chain) throws IOException {
-        PreferenceManager pm= DataManager.getINSTANCE().getPreferenceManager();
+        PreferenceManager pm= DataManager.getInstance().getPreferenceManager();
         Request origin=chain.request();
         Request.Builder requestBuilder=origin.newBuilder()
                 .header("X-Access-Token",pm.getAuthToken())

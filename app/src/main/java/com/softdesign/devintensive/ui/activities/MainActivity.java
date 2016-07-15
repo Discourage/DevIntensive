@@ -122,7 +122,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
 
         Log.d(TAG, "onCreate");
 
-        mDataManager = DataManager.getINSTANCE();
+        mDataManager = DataManager.getInstance();
 
         mUserInfoViews = new ArrayList<>();
         mUserInfoViews.add(mUserPhone);
@@ -316,6 +316,9 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
             @Override
             public boolean onNavigationItemSelected(MenuItem item) {
                 switch (item.getItemId()) {
+                    case R.id.team_menu:
+                        Intent teamIntent = new Intent(getApplicationContext(), UserListActivity.class);
+                        startActivity(teamIntent);
                     case R.id.user_logout:
                         Intent logoutIntent = new Intent(getApplicationContext(), AuthActivity.class);
                         startActivity(logoutIntent);
