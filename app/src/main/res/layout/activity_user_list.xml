@@ -25,7 +25,8 @@
                 android:layout_height="?attr/actionBarSize"
                 app:layout_collapseMode="pin"
                 app:popupTheme="@style/AppTheme.PopupOverlay"
-                app:titleTextColor="@color/white"/>
+                app:titleTextColor="@color/white"
+                app:title="@string/team"/>
 
 
         </android.support.design.widget.AppBarLayout>

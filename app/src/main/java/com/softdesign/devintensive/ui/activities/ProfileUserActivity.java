@@ -59,7 +59,7 @@ public class ProfileUserActivity extends AppCompatActivity {
         setupToolbar();
         initProfileData();
     }
-
+    //Реализация toolbar
     private void setupToolbar() {
         setSupportActionBar(mToolbar);
         ActionBar actionBar = getSupportActionBar();
@@ -68,7 +68,7 @@ public class ProfileUserActivity extends AppCompatActivity {
             actionBar.setDisplayHomeAsUpEnabled(true);
         }
     }
-
+    // инициализация данных пользователя
     private void initProfileData() {
         UserDTO userDTO = getIntent().getParcelableExtra(ConstantManager.PARCELABLE_KEY);
         final List<String> repositories = userDTO.getRepositories();
@@ -97,7 +97,7 @@ public class ProfileUserActivity extends AppCompatActivity {
                 .into(mProfileImage);
 
     }
-
+    // открыть страницу github
     void doOpenGit(String url) {
         Intent openlinkIntentGit = new Intent(Intent.ACTION_VIEW, Uri.parse("https://" + url));
         startActivity(openlinkIntentGit);

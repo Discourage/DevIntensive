@@ -316,16 +316,21 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
             @Override
             public boolean onNavigationItemSelected(MenuItem item) {
                 switch (item.getItemId()) {
-                    case R.id.team_menu:
+                    case R.id.navdrawer_user_profile_menu:
+                        showSnackBar(item.getTitle().toString());
+                        item.setChecked(true);
+                        mNavigationDrawer.closeDrawer(GravityCompat.START);
+                        break;
+                    case R.id.navdrawer_team_menu:
                         Intent teamIntent = new Intent(getApplicationContext(), UserListActivity.class);
                         startActivity(teamIntent);
-                    case R.id.user_logout:
+                        break;
+                    case R.id.navdrawer_user_logout_menu:
                         Intent logoutIntent = new Intent(getApplicationContext(), AuthActivity.class);
                         startActivity(logoutIntent);
+                        break;
                 }
-                showSnackBar(item.getTitle().toString());
-                item.setChecked(true);
-                mNavigationDrawer.closeDrawer(GravityCompat.START);
+
                 return false;
             }
         });
@@ -378,6 +383,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
                 mOpenGit.setEnabled(false);
 
                 mUserPhone.requestFocus();
+
                 lockToolbar();
                 mCollapsingToolbar.setExpandedTitleColor(Color.TRANSPARENT);
 

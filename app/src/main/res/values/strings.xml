@@ -69,4 +69,6 @@
         completions."
     </string>
 
+    <string name="hint_search">Search</string>
+
 </resources>

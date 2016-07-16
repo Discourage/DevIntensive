@@ -43,7 +43,6 @@ public class AuthActivity extends BaseActivity implements View.OnClickListener {
     CoordinatorLayout mCoordinatorLayout;
     private DataManager mDatamanager;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
