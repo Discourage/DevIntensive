@@ -23,33 +23,35 @@ import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
 public class ProfileUserActivity extends AppCompatActivity {
 
-    private Toolbar mToolbar;
-    private ImageView mProfileImage, mGotoGitImg;
-    private EditText mUserBio, mUserGit;
-    private TextView mUserRating, mUserCodeLines, mUserProjects;
-    private CollapsingToolbarLayout mCollapsingToolbarLayout;
-    private CoordinatorLayout mCoordinatorLayout;
-
-    private ListView mRepoListView;
+    @BindView(R.id.toolbar)
+    Toolbar mToolbar;
+    @BindView(R.id.user_foto)
+    ImageView mProfileImage;
+    @BindView(R.id.about_et)
+    EditText mUserBio;
+    @BindView(R.id.profile_info_rate_txt)
+    TextView mUserRating;
+    @BindView(R.id.profile_info_codelines_txt)
+    TextView mUserCodeLines;
+    @BindView(R.id.profile_info_project_txt)
+    TextView mUserProjects;
+    @BindView(R.id.collapsing_toolbar)
+    CollapsingToolbarLayout mCollapsingToolbarLayout;
+    @BindView(R.id.main_coordinator_container)
+    CoordinatorLayout mCoordinatorLayout;
+    @BindView(R.id.repositories_list)
+    ListView mRepoListView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile_user);
-
-        mToolbar = (Toolbar) findViewById(R.id.toolbar);
-        mProfileImage = (ImageView) findViewById(R.id.user_foto);
-        mUserBio = (EditText) findViewById(R.id.about_et);
-        mUserRating = (TextView) findViewById(R.id.profile_info_rate_txt);
-        mUserCodeLines = (TextView) findViewById(R.id.profile_info_codelines_txt);
-        mUserProjects = (TextView) findViewById(R.id.profile_info_project_txt);
-        mCollapsingToolbarLayout = (CollapsingToolbarLayout) findViewById(R.id.collapsing_toolbar);
-        mCoordinatorLayout = (CoordinatorLayout) findViewById(R.id.main_coordinator_container);
-        mRepoListView = (ListView) findViewById(R.id.repositories_list);
-        mGotoGitImg = (ImageView) findViewById(R.id.goto_git_img);
-        mUserGit = (EditText) findViewById(R.id.user_git_et);
+        ButterKnife.bind(this);
 
         mCollapsingToolbarLayout.setExpandedTitleColor(getResources().getColor(R.color.white));
         mCollapsingToolbarLayout.setCollapsedTitleTextColor(getResources().getColor(R.color.white));
@@ -81,7 +83,7 @@ public class ProfileUserActivity extends AppCompatActivity {
             }
         });
 
-                mUserBio.setText(userDTO.getBio());
+        mUserBio.setText(userDTO.getBio());
         mUserRating.setText(userDTO.getRating());
         mUserCodeLines.setText(userDTO.getCodeLines());
         mUserProjects.setText(userDTO.getProjects());

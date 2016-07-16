@@ -28,16 +28,23 @@ import com.softdesign.devintensive.utils.ConstantManager;
 import java.util.ArrayList;
 import java.util.List;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
 public class UserListActivity extends AppCompatActivity {
-    private static final String TAG= ConstantManager.TAG_PREFIX + " UserListActivity";
-    private CoordinatorLayout mCoordinatorLayout;
-    private Toolbar mToolbar;
-    private DrawerLayout mNavigationDrawer;
-    private RecyclerView mRecyclerView;
+    private static final String TAG = ConstantManager.TAG_PREFIX + " UserListActivity";
+
+    @BindView(R.id.main_coordinator_container)
+    CoordinatorLayout mCoordinatorLayout;
+    @BindView(R.id.toolbar)
+    Toolbar mToolbar;
+    @BindView(R.id.navigation_drawer)
+    DrawerLayout mNavigationDrawer;
+    @BindView(R.id.user_list)
+    RecyclerView mRecyclerView;
 
     private DataManager mDataManager;
     private UsersAdapter mUsersAdapter;
@@ -47,14 +54,11 @@ public class UserListActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_list);
+        ButterKnife.bind(this);
 
         mDataManager = DataManager.getInstance();
-        mCoordinatorLayout = (CoordinatorLayout) findViewById(R.id.main_coordinator_container);
-        mToolbar = (Toolbar) findViewById(R.id.toolbar);
-        mNavigationDrawer = (DrawerLayout) findViewById(R.id.navigation_drawer);
-        mRecyclerView= (RecyclerView) findViewById(R.id.user_list);
 
-        LinearLayoutManager linearLayoutManager=new LinearLayoutManager(this);
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
         mRecyclerView.setLayoutManager(linearLayoutManager);
 
         setupToolbar();
@@ -119,21 +123,21 @@ public class UserListActivity extends AppCompatActivity {
             public void onResponse(Call<UserListRes> call, Response<UserListRes> response) {
                 try {
                     mUsers = response.body().getData();
-                    mUsersAdapter=new UsersAdapter(mUsers, new UsersAdapter.UserViewHolder.CustomClickListener() {
+                    mUsersAdapter = new UsersAdapter(mUsers, new UsersAdapter.UserViewHolder.CustomClickListener() {
                         @Override
                         public void onUserItemClickListener(int position) {
-                            UserDTO userDTO= new UserDTO(mUsers.get(position));
+                            UserDTO userDTO = new UserDTO(mUsers.get(position));
 
-                            Intent profileIntent = new Intent(UserListActivity.this,ProfileUserActivity.class);
-                            profileIntent.putExtra(ConstantManager.PARCELABLE_KEY,userDTO);
+                            Intent profileIntent = new Intent(UserListActivity.this, ProfileUserActivity.class);
+                            profileIntent.putExtra(ConstantManager.PARCELABLE_KEY, userDTO);
 
                             startActivity(profileIntent);
                         }
                     });
 
                     mRecyclerView.setAdapter(mUsersAdapter);
-                }catch (NullPointerException e){
-                    Log.d(TAG,e.toString());
+                } catch (NullPointerException e) {
+                    Log.d(TAG, e.toString());
                     showSnackBar("Что-то пошло не так");
                 }
 
