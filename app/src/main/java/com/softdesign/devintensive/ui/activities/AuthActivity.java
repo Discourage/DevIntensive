@@ -43,7 +43,6 @@ public class AuthActivity extends BaseActivity implements View.OnClickListener {
     CoordinatorLayout mCoordinatorLayout;
     private DataManager mDatamanager;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,7 +53,7 @@ public class AuthActivity extends BaseActivity implements View.OnClickListener {
 //        String[] fingerprints = VKUtil.getCertificateFingerprint(this, this.getPackageName());
 //        Log.d("Fingerprint", fingerprints[0]);
         Log.d(TAG, "onCreate");
-        mDatamanager = DataManager.getINSTANCE();
+        mDatamanager = DataManager.getInstance();
         mSignIn.setOnClickListener(this);
         mRememberPassword.setOnClickListener(this);
     }

@@ -6,6 +6,10 @@
 
     <integer name="com_vk_sdk_AppId">5537171</integer>
 
+    <!--Fonts-->
+    <string name="ff_medium">sans-serif-medium</string>
+    <string name="ff_regular">sans-serif-regular</string>
+
     <!-- Profile hints -->
 
     <string name="mobile_phone">Мобильный телефон</string>
@@ -48,6 +52,7 @@
     <string name="profile_git">github.com/</string>
     <string name="profile_about">О себе</string>
 
+
     <!-- Strings related to login -->
     <string name="prompt_email">Email</string>
     <string name="prompt_password">Пароль</string>
@@ -63,5 +68,7 @@
     <string name="permission_rationale">"Contacts permissions are needed for providing email
         completions."
     </string>
+
+    <string name="hint_search">Search</string>
 
 </resources>
